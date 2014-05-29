@@ -1,4 +1,4 @@
 snips
 =====
 
-My persona code snips for the amazing ultisnips vim plugin
+My personal code snips for the amazing ultisnips vim plugin
