@@ -1,0 +1,91 @@
+#-- a comment line
+snippet --
+//--------------------------------------------------------------------------
+endsnippet
+
+#class 
+snippet class "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+	${1/(\w+).*/$1/} (${2:arguments})
+	{
+		${0}
+	}
+};
+endsnippet
+
+#if block
+snippet if 
+if(${1})
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+#else if block
+snippet elseif
+else if(${1})
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+#else block
+snippet else 
+else
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+#for
+snippet for
+for(int i=0;i<${1};i++)
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+#for each
+snippet foreach
+foreach(var ${2} in ${1})
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+#include snippets
+snippet us
+using ${1};
+endsnippet
+
+#a main function
+snippet main
+public static int Main(String[] args)
+{
+	${1}
+	return 0;
+}
+endsnippet
+
+snippet write
+Console.WriteLine(${VISUAL}${0});
+endsnippet
+
+snippet while "while loop"
+while(${1}) 
+{
+${VISUAL}${0}
+}
+endsnippet
+
+snippet meth "function" b
+${1:void} ${2:function_name}(${3})
+{
+${VISUAL}${0}
+}
+endsnippet
+
+snippet eof
+//EOF${NORMAL}
+endsnippet
