@@ -4,103 +4,100 @@ snippet --
 endsnippet
 
 #class 
-snippet class "class .. (class)"
-class ${1:`!p snip.rv = snip.basename or "name"`}
-{
-	${1/(\w+).*/$1/} (${2:arguments})
-	{
-		${0}
-	}
+snippet class "Create a new class)"
+class ${1:`!p snip.rv = snip.basename or "name"`} {
+    ${1/(\w+).*/$1/} (${2:arguments}) {
+	${0}
+    }
 };
 endsnippet
 
-snippet interface "interface .. (interface)"
-interface ${1:`!p snip.rv = snip.basename or "name"`}
-{
-	${2:void} ${3:function_name}(${4});
+snippet interface "Create a new interface"
+interface ${1:`!p snip.rv = snip.basename or "name"`} {
+    ${2:void} ${3:function_name}(${4});
 };
 endsnippet
 
 #if block
-snippet if 
-if(${1})
-{
-	${VISUAL}${0}
+snippet if "A single if block"
+if(${1}) {
+    ${VISUAL}${0}
 }
 endsnippet
 
 #else if block
-snippet elseif
-else if(${1})
-{
-	${VISUAL}${0}
+snippet elseif "An elseif block"
+else if(${1}) {
+    ${VISUAL}${0}
 }
 endsnippet
 
 #else block
-snippet else 
-else
-{
-	${VISUAL}${0}
+snippet else "An else block"
+else {
+    ${VISUAL}${0}
 }
 endsnippet
 
 #for
-snippet for
-for(int i=0;i<${1};i++)
-{
-	${VISUAL}${0}
+snippet for "A traditional for loop"
+for(int i=0; i<${1}; i++) {
+    ${VISUAL}${0}
 }
 endsnippet
 
 #for each
-snippet foreach
-foreach(var ${2} in ${1})
-{
-	${VISUAL}${0}
+snippet foreach "A foreach loop"
+foreach(var ${2} in ${1}) {
+    ${VISUAL}${0}
 }
 endsnippet
 
 #include snippets
-snippet us
+snippet us "Adding a new using directive"
 using ${1};
 endsnippet
 
 #a main function
-snippet main
-public static int Main(String[] args)
-{
-	${1}
-	return 0;
+snippet main "Add a main method"
+public static int Main(String[] args) {
+    ${1}
+    return 0;
 }
 endsnippet
 
-snippet write
+snippet write "Console.WriteLine(...)"
 Console.WriteLine(${VISUAL}${0});
 endsnippet
 
-snippet while "while loop"
-while(${1}) 
-{
+#Unity log 
+snippet log "Unity's Debug.Log(...)"
+Debug.Log(${VISUAL}${0})
+endsnippet
+
+snippet loge "Unity's Debug.Error(...)"
+Debug.Error(${VISUAL}${0})
+endsnippet
+
+snippet while "A while loop"
+while(${1}) {
+    ${VISUAL}${0}
+}
+endsnippet
+
+snippet meth "create a new method" b
+${1:void} ${2:function_name}(${3}) {
 ${VISUAL}${0}
 }
 endsnippet
 
-snippet meth "function" b
-${1:void} ${2:function_name}(${3})
-{
-${VISUAL}${0}
+snippet ns "Add a namespace directive"
+namespace ${1} {
+    ${VISUAL}${0}
 }
 endsnippet
 
-snippet ns
-namespace ${1}
-{
-	${VISUAL}${0}
-}
-endsnippet
-
-snippet region
+snippet region "Add a region"
 #region ${1}
 
 ${VISUAL}${0}
@@ -109,17 +106,12 @@ ${VISUAL}${0}
 endsnippet
 
 
-snippet ///
+snippet /// "<summary> comment"
 /// <summary>
 ///		${1}
 /// </summary>
 endsnippet
 
-snippet param
+snippet param "<param> comment"
 <param name="${1}">${0}</param>
-endsnippet
-
-
-snippet eof
-//EOF${NORMAL}
 endsnippet
